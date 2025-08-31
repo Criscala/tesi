@@ -1,0 +1,35 @@
+{
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-auxdir=build",
+        "-outdir=PDF",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "build/%DOCFILE%"
+      ]
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk ➞ PDF",
+      "tools": ["latexmk"]
+    },
+    {
+      "name": "latexmk ➞ biber ➞ latexmk",
+      "tools": ["latexmk", "biber", "latexmk"]
+    }
+  ]
+}
