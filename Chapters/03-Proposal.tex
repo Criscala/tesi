@@ -1,68 +1,56 @@
 % !TEX root = ../Thesis.tex
 
-\chapter{How to heat the water differently}
+% ...existing code...
+\chapter{Metodi di analisi}
 \label{cap:proposal}
 
-This is the `main' chapter of your thesis.
+Lo scopo principale delle attività sperimentali è stato quello di determinare la composizione e struttura dei nidi di diverse specie appartenenti alla famiglia vespidae.
+Sono stati analizzati campioni provenienti da nidi di Polistes dominula, Polistes gallicus, Vespula spp. e Vespa crabro, di questi ultimi si è analizzato sia l'involucro esterno sia le celle interne dei nidi.
 
-Here you have to show that \emph{your} version of heated water differs slightly from any other known version of heated water, and this is important.
+\noindent Per preservare le caratteristiche dei campioni dei nidi, e quindi evitare trattamenti preliminare di qualsiasi natura, si è proceduto all'analisi di questi tramite la tecnica di spettroscopia NMR a stato solido, che permette di ricavare importanti informazioni riguardo la struttura e l'organizzazione delle componeneti dei nidi.
 
-\section{How did I discover a novel type of heated water}
+\noindent Le analisi sono state condotte due diversi spettrometri che lavorano con intensità di campo differente, 700 e 800; nel presente capitolo si descrive la procedura di preparazione del campione, le diverse analisi effettuate sui campioni e la raccolta dei dati sperimentali.
 
-Explain in detail what are the steps to heat the water in a novel way.
+\section{Preparazione dei campioni}
+I campioni dei nidi che sono stati utilizzati sono:
+\begin{itemize}
+    \item Polistes dominula
+    \item Polistes gallicus
+    \item Vespa crabro - celle interne e involucro esterno
+    \item Vespula - celle interne e involucro esterno
+\end{itemize}
+Il vantaggio della tecnica utilizzata è quello di poter usare il campione desiderato tale e quale allo stato solido, ossia senza bisogno di trattamenti chimici o di trovare un solvente adeguato per preparare una soluzione da analizzare.
+L'unica necessità preparativa è quella di ottenere il campione finemente macinato, quindi i diversi campioni sono stati tutti triturati con un pestello in un mortaio fino a raggiungere una polvere fine e omogenenea; è infatti importante per la qualità dei risultati che le dimensioni dei granuli che si ottengono siano il più possibile simili.
 
-\section{How my heated water differs from the previous ones}
+\noindent Dopo questa breve preparazione i campioni sono stati introdotti con un apposito imbuto in un rotore di 3.2 mm, questo è stato poi compattato il più possibile in modo ceh all'interno ci fosse più campione possibile.
+Una volta preparato correttamente il rotore questo è stato chiuso ed è stato fatto un segno con un pennarello in modo che lo spettrometro tramite un sensore IR rilevasse la velocità di rotazione del rotore durante l'analisi.
 
-Describe why and how your findings are different from the past versions.
+\section{Tecniche di analisi}
+Per andare a studiare la struttura molecolare dei nidi si è sfruttata la tecnica di spettroscopia NMR allo stato solido del carbonio-13 (¹³C CP/MAS NMR), che consente di ricavare informazioni sulla struttura tramite il segnale associato al ¹³C.
+Essa combina la polarizzazione incrociata (Cross Polarization, CP), che aumenta la sensibilità del segnale ¹³C trasferendo magnetizzazione dai nuclei di ¹H, con la rotazione ad angolo magico (Magic Angle Spinning, MAS), che riduce l’anisotropia delle interazioni dipolari e dello spostamento chimico.
+Questa configurazione permette di ottenere spettri ad alta risoluzione, utili per distinguere le diverse tipologie di carbonio presenti e valutare il grado di ordine o disordine strutturale del materiale analizzato, in questo caso i nidi delle specie della famiglia vespidae
 
-Here you might want to add code (see for example Listing~\ref{code:example}), or tables (see Table~\ref{tab:example}).
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/CPMAS13C.png}
+  \caption{Schematica rappresentazione del funziomento dello strumento}
+  \label{fig:esempio-immagine}
+\end{figure}
 
-Note that figures, listings, tables, and so on, should never be placed `manually'. Let LaTeX decide where to put them - you'll avoid headaches (and bad layouts). Furthermore, each of them must be referred to at least once in the body of the thesis.
+Per i diversi campioni sono state effetuate misure con due differenti spettrometri che lavorano ad una diversa intensità del campo magnetico, ossia 700 MHZ ( che corripsonde ad un campo magnetico di 16.4 T) e 800 MHz ( che corripsonde ad un campo magnetico di 18.8 T).
+In particolare sono stati analizzati con lo strumento a 700 MHz i campioni di:
+\begin{itemize}
+    \item Polistes dominula 
+    \item Polistes gallicus 
+    \item Vespa crabro - celle interne e involucro esterno
+\end{itemize}
+Mentre con lo strumento a 800 MHz sono stati analizzati i campioni di:
+\begin{itemize}
+    \item Polistes dominula
+    \item Vespa crabro - celle interne e involucro esterno
+    \item Vespula - celle interne e involucro esterno
+\end{itemize}
+Le analisi effettuate con lo spettrometro a 800 MHz consente di ottenere una maggiore sensibilità e una migliore risoluzione spettrale. Il campione di Vespa crabro è stato analizzato con entrambi gli strumenti in quanto gli spettri ottenuti con lo spettrometro a 700 MHz sono stati esclusi dall’analisi a causa di problemi tecnici riscontrati nel funzionamento del probe durante la misura.
+Invece per i nidi di Polistes dominula sono stati registrati gli spettri di entrambi gli spettrometri poichè si voleva un confronto tra i due spettri ottenuti e sopratutto un confronto riguardante i chemical shift dei carboni in posizione 1 e posizione 4 presenti in letteratura \cite{LARSSON199719} che sono stati determinati proprio con uno strumento a 700 MHz
 
-
-\begin{lstlisting}[language=Python, caption=Python example, float, label=code:example]
-import numpy as np
-    
-def incmatrix(genl1,genl2):
-    m = len(genl1)
-    n = len(genl2)
-    M = None #to become the incidence matrix
-    VT = np.zeros((n*m,1), int)  #dummy variable
-    
-    #compute the bitwise xor matrix
-    M1 = bitxormatrix(genl1)
-    M2 = np.triu(bitxormatrix(genl2),1) 
-
-    for i in range(m-1):
-        for j in range(i+1, m):
-            [r,c] = np.where(M2 == M1[i,j])
-            for k in range(len(r)):
-                VT[(i)*n + r[k]] = 1;
-                VT[(i)*n + c[k]] = 1;
-                VT[(j)*n + r[k]] = 1;
-                VT[(j)*n + c[k]] = 1;
-                
-                if M is None:
-                    M = np.copy(VT)
-                else:
-                    M = np.concatenate((M, VT), 1)
-                
-                VT = np.zeros((n*m,1), int)
-    
-    return M
-\end{lstlisting}
-
-\begin{table}[tbp]
-\centering
-\caption{Example table}
-\label{tab:example}
-\begin{tabular}{@{}lll@{}}
-\toprule
-Country       & Country code & ISO codes \\ \midrule
-Canada        & 1            & CA / CAN  \\
-Italy         & 39           & IT / ITA  \\
-Spain         & 34           & ES / ESP  \\
-United States & 1            & US / USA  \\ \bottomrule
-\end{tabular}
-\end{table}
-
+\section{Risulati e spettri ottenuti}
