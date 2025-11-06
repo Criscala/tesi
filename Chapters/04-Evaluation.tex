@@ -1,17 +1,143 @@
 % !TEX root = ../Thesis.tex
 
-\chapter{Numerical results}
+\chapter{Risultati ed elaborazione dati}
+L'obiettico principale di questo capitolo è quello di elaborare i risultati e dati ottenuti durante le analisi.
+Sono state osservate le strutture delle proteine predette con Alphafold e confrontate con un modello di cellulosa per determinare come queste possano combinarsi nella struttura interna dei nidi.
 
-This is where you show that the novel `thing' you described in Chapter~\ref{cap:proposal} is, indeed, much better than the existing versions of the same.
+Gli spettri di ¹³C ottenuti per i diversi campioni sono stati elaborati, è stato eliminato il rumore ed è stato fatto il fitting della zona relativa al segnale del carbonio 1 e del carbonio 4 per determinare la composizione della frazione di cellulosa presente.
 
-You will probably use figures (try to use a high-resolution version), graphs, tables, and so on. An example is shown in Figure~\ref{fig:dave}.
+\section{Struttura proteica}
+Tramite la struttura tridimensionale predetta usando Alphafold si è cercato di analizzare come la componente proteiche si assocciasse alla componente cellulosica dei nidi.
+Il modello sfruttato per considerare come le proteine e cellulosa interagissero si è semplificato considerando solo la possibilità di formazione di interazioni intermolecolari di tipo Van der Walls.
+Tramite le sequenze aminoacidiche delle proteine in esame si sono ottenuti dati relativi all'energia di solvatazione e all'accessibilità del solvente ai residui proteici, usati poi in uno script in python in modo da ricavare come una superficie, che simula il ruolo della cellulosa, si posizionasse rispetto alle componeneti proteiche \cite{CEROFOLINI2}.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=.7\textwidth]{DaveSecurity}
-\caption{Network Security - the sad truth}
-\label{fig:dave}
-\end{center}
+Due delle quattro proteine sono state analizzate considerando solo una parte della loro struttura.
+Quindi per le proteine 03231 e 08705 sono state rimosse parti di sequenza aminoacidica corrispondente alla iniziale alfa elica presente.
+Per la proteina 03231 non è stata considerata la sequenza fino al residuo 57 di alanina.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{03231 57ALA.png}
+  \caption{Struttura della proteina 03231 eliminando la porzione ad alfa elica}
+  \label{fig:Proteina 03231 modificata}
 \end{figure}
 
-Note that, likewise tables and listings, you shall not worry about where the figures are placed. Moreover, you should not add the file extension (LaTeX will pick the `best' one for you) or the figure path.
+Mentre per la proteina 08705 non è stata considerata la sequenza fino al residuo 26 di valina.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/08705_26VAL.png}
+  \caption{Struttura della proteina 08705 eliminando la porzione ad alfa elica}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+Con queste due sequenze modificate e con le altre due sequenze intere è stato quindi poi ottenuto il modello che simula il comportamento della cellulosa ottenendo:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/10508 SURFACE.png}
+  \caption{Simulazione del comportamento della cellulosa rappresentata dalle superficie azzurre attorno alla proteina 10508}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/04136 SURFACE.png}
+  \caption{Simulazione del comportamento della cellulosa rappresentata dalla superficia rossa sottostante alla proteina 04156}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/07805 SURFACE.png}
+  \caption{Simulazione del comportamento della cellulosa rappresentata dalla superficia rossa sottostante alla proteina 08705}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/03231 SURFACE.png}
+  \caption{Simulazione del comportamento della cellulosa rappresentata dalla superficia rossa sottostante alla proteina 03231}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+
+\section{Processing spettri e assegnazione del segnale}
+Una procedura fondamentale per analizzare gli spettri e per poter poi assegnare i differenti segnali presenti è stato il processing.
+Sfruttando KLASSEZ è stato realizzato uno script in python che permetesse di elaborare gli spettri e aggiustare parametri come ... per poi passare anche al denoising.
+
+\begin{verbatim}
+from klassez import *
+
+path=r'percorso del file' 
+s=Pseudo_2D(path) 
+s.fid,*_=processing.mcr(s.fid,nc=3)
+
+s.procs['wf']['mode'] = 'em'
+s.procs['wf']['em'] = 50
+s.procs['zf'] = 8192
+
+s.process()
+s.pknl()
+s.adjph()
+\end{verbatim}
+
+
+
+\subsection{Polistes dominula}
+Per i campioni di nidi della specie Polistes dominula sono stati realizzati spettri NMR al carbonio 13 sia operando con lo spettrometro a 700 MHZ che con quello a 800 MHz.
+Sono stati esaminati due nidi campionanti in momenti differenti, tuttavia gli spettri relativi al campione raccolto precedentemente erano già in possesso. 
+Per questo stesso campione non sono stati inoltre realizzati esperimenti con lo spettrometro a 800 MHz.
+
+Per la zona relativa al segnale dei carboni in posizione 1 della cellulosa si è ottenuto:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/FIT DOMINULA VECCHIO C1 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C1 }
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/FIT DOMINULA C1 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C1}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{Figures/FIT DOMINULA C1 800 PS2D TRACCIA 1.png}
+  \caption{Fit zona C1}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\noindent Per la zona relativa al segnale dei carboni in posizione 4 della cellulosa si è ottenuto:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT DOMINULA VECCHIO C4 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C4}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT DOMINULA C4 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C4}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT DOMINULA C4 800 PS2D TRACCIA 1.png}
+  \caption{Fit zona C4}
+  \label{fig:esempio-immagine}
+\end{figure}
+
+\subsection{Polistes gallicus}
+
+\subsection{Vespa crabro}
+
+\subsection{Vespula}
+
