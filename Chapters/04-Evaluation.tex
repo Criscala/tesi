@@ -67,9 +67,10 @@ Una procedura fondamentale per analizzare gli spettri e per poter poi assegnare 
 Sfruttando KLASSEZ è stato realizzato uno script in python che permetesse di elaborare gli spettri e aggiustare parametri come ... per poi passare anche al denoising.
 
 \begin{verbatim}
+
 from klassez import *
 
-path=r'percorso del file' 
+path=r'' #file da leggere
 s=Pseudo_2D(path) 
 s.fid,*_=processing.mcr(s.fid,nc=3)
 
@@ -80,12 +81,46 @@ s.procs['zf'] = 8192
 s.process()
 s.pknl()
 s.adjph()
+
+lim1 = { 
+        "shift" :( -0.1 ,0.1) , 
+        "lw" :(100 ,2000) , 
+        "ph" :( -np.pi /100 , np.pi /100) ,
+        "A" :(0 ,0) , "B" :(0 ,0) , "C" :(0 ,0) , "D" :(0 ,0) , "E" :(0 ,0) }
+
+from tragico import f_fit as trfit
+trfit.model_fit_1D(path, 
+	delays_list=[950,2000], 
+	list_path=['11', '11'], 
+	option=None, 
+	dir_name='nuovo', 
+	cal_lim=None, 
+	IR=False, 
+	dofit=True, 
+	prev_fit=None, 
+    
+    fast=True, 
+	limits1 = lim1, 
+	limits2 = None, 
+	L1R = None, 
+	L2R = None, 
+	err_conf=0.95, 
+	doexp=False, 
+	f_int_fit=None, 
+	fargs=None, 
+	Spectra=np.array(
+        [s.rr[5], s.rr[12]]),   
+	ppmscale=s.ppm_f2, 
+	acqupars=s.acqus, 
+	procpars=s.procs, 
+	Param=None)
+
 \end{verbatim}
 
 
 
 \subsection{Polistes dominula}
-Per i campioni di nidi della specie Polistes dominula sono stati realizzati spettri NMR al carbonio 13 sia operando con lo spettrometro a 700 MHZ che con quello a 800 MHz.
+Per i campioni di nidi della specie Polistes dominula sono stati realizzati spettri NMR al carbonio 13 sia operando con lo spettrometro a 700 MHz che con quello a 800 MHz.
 Sono stati esaminati due nidi campionanti in momenti differenti, tuttavia gli spettri relativi al campione raccolto precedentemente erano già in possesso. 
 Per questo stesso campione non sono stati inoltre realizzati esperimenti con lo spettrometro a 800 MHz.
 
@@ -93,21 +128,21 @@ Per la zona relativa al segnale dei carboni in posizione 1 della cellulosa si è
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{Figures/FIT DOMINULA VECCHIO C1 700 PS2D TRACCIA 1.png}
+  \includegraphics[width=0.75\textwidth]{Figures/FIT DOMINULA VECCHIO C1 700 PS2D TRACCIA 1.png}
   \caption{Fit zona C1 }
   \label{fig:esempio-immagine}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{Figures/FIT DOMINULA C1 700 PS2D TRACCIA 1.png}
+  \includegraphics[width=0.75\textwidth]{Figures/FIT DOMINULA C1 700 PS2D TRACCIA 1.png}
   \caption{Fit zona C1}
   \label{fig:esempio-immagine}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{Figures/FIT DOMINULA C1 800 PS2D TRACCIA 1.png}
+  \includegraphics[width=0.75\textwidth]{Figures/FIT DOMINULA C1 800 PS2D TRACCIA 1.png}
   \caption{Fit zona C1}
   \label{fig:esempio-immagine}
 \end{figure}
@@ -137,7 +172,91 @@ Per la zona relativa al segnale dei carboni in posizione 1 della cellulosa si è
 
 \subsection{Polistes gallicus}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/FIT GALLICUS C1 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C1}
+  \label{fig:gallicus C1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/FIT GALLICUS VECCHIO C1 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C1}
+  \label{fig:gallicus C1 vecchio}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT GALLICUS C4 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C4}
+  \label{fig:gallicus C4}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT GALLICUS VECCHIO C4 700 PS2D TRACCIA 1.png}
+  \caption{Fit zona C4}
+  \label{fig: gallicus C4 vecchio}
+\end{figure}
+
 \subsection{Vespa crabro}
 
-\subsection{Vespula}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/FIT CRABRO C1 CELLE.png}
+  \caption{Fit zona C1}
+  \label{fig: FIT CRABRO C1 CELLE}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/FIT CRABRO C1 INVOLUCRO.png}
+  \caption{Fit zona C1}
+  \label{fig: FIT CRABRO C1 INV}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT CRABRO C4 CELLE.png}
+  \caption{Fit zona C4}
+  \label{fig: FIT CRABRO C4 CELLE}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT CRABRO C4 INVOLUCRO.png}
+  \caption{Fit zona C4}
+  \label{fig: FIT CRABRO C4 INV}
+\end{figure}
+
+\subsection{Vespula vulgaris}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/FIT VESPULA C1 CELLE.png}
+  \caption{Fit zona C4}
+  \label{fig: FIT VESPULA C1 CELLE}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{Figures/FIT VESPULA C1 INVOLUCRO.png}
+  \caption{Fit zona C4}
+  \label{fig: FIT VESPULA C1 INV}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT VESPULA C4 CELLE.png}
+  \caption{Fit zona C4}
+  \label{fig: FIT VESPULA C4 CELLE}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/FIT VESPULA C4 INVOLUCRO.png}
+  \caption{Fit zona C4}
+  \label{fig: FIT VESPULA c4 INV}
+\end{figure}
 
