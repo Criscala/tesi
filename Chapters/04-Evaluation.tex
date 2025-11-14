@@ -62,9 +62,9 @@ Con queste due sequenze modificate e con le altre due sequenze intere è stato q
 \end{figure}
 
 
-\section{Processing spettri e assegnazione del segnale}
+\section{Processing spettri e assegnazione dei segnali}
 Una procedura fondamentale per analizzare gli spettri e per poter poi assegnare i differenti segnali presenti è stato il processing.
-Sfruttando KLASSEZ è stato realizzato uno script in python che permetesse di elaborare gli spettri e aggiustare parametri come ... per poi passare anche al denoising.
+Sfruttando KLASSEZ è stato realizzato uno script in python che permetesse di elaborare gli spettri e aggiustare parametri come ... per poi passare anche al denoising. \cite{Fiorucci}
 
 \begin{verbatim}
 
@@ -83,10 +83,10 @@ s.pknl()
 s.adjph()
 
 lim1 = { 
-        "shift" :( -0.1 ,0.1) , 
-        "lw" :(100 ,2000) , 
-        "ph" :( -np.pi /100 , np.pi /100) ,
-        "A" :(0 ,0) , "B" :(0 ,0) , "C" :(0 ,0) , "D" :(0 ,0) , "E" :(0 ,0) }
+    "shift" :( -0.1 ,0.1) , 
+    "lw" :(100 ,2000) , 
+    "ph" :( -np.pi /100 , np.pi /100) ,
+    "A" :(0,0) ,"B" :(0,0) ,"C" :(0,0), "D" :(0,0), "E" :(0,0)}
 
 from tragico import f_fit as trfit
 trfit.model_fit_1D(path, 
@@ -260,3 +260,30 @@ Per la zona relativa al segnale dei carboni in posizione 1 della cellulosa si è
   \label{fig: FIT VESPULA c4 INV}
 \end{figure}
 
+\section{Analisi del segnale proteico}
+
+Negli spettri ottenuti è presente anche segnale NMR relativo alle componenti proteiche dei nidi.
+Questi segnali si ritrovano principalmente nella zona compresa tra 160 e 180 ppm, segnale relativo alla funzionalità carbonilica degli aminoacidi delle proteine, e tra i 20 e 60 ppm.
+L'assegnazione dei segnali delle proteine è stato effettuato sfruttando un programma che restituisce nello spettro una predizione di questo segnale partendo dalla sequenza aminoacidica. \cite{Haote}
+
+Le proteine di maggiore interesse per il quale è stata effettuta questa analisi sono quelle che hanno mostrato una migliore interazione con la cellulosa, ossia le due proteine PdomMRNAr1.2-03231.1 PdomMRNAr1.2-08705.1, ed è stata effettuata questa ricerca solo sullo spettro di Polistes dominula.
+Nelle immagini sottostanti sono riportati i risultati ottenuti.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/zprotdom.png}
+  \caption{Predizione del segnale proteico sullo spettro di Polistes dominula}
+  \label{fig: prot pred}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/zprotdom2.png}
+  \caption{Contribuzione del segnale da parte delle differenti strutture secondarie}
+  \label{fig: prot pred 2}
+\end{figure}
+
+La predizione riportata nelle immagini fa riferimento ad entrambe le proteine; a causa della loro estrema somiglianza queste due restituiscono la medesima predizione.
+Per effettuare questa predizione è stato considerato lo spettro di Polistes dominula escludendo la zona in cui si ha solamente il segnale associato alla cellulosa, ossia tra 60 e 120 ppm circa.
+Dai risultati ottenuti si evince che c'è un ottimo accordo tra la predizione effettuata e il segnale proteico presente nello spettro.
+Si può anche notare che la maggior parte del segnale è associato ad una struttura di tipo foglietto beta, questo è perfettamente in accordo con la struttura delle proteine predette con Alphafold \cite{AlphaFold}, che appunto presentavano una corta catena ad alfa elica e per il resto la struttura era appunto a foglietto beta.
