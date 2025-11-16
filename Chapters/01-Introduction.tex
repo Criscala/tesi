@@ -75,6 +75,7 @@ Al contrario, Vespula e Vespa, i quali costruiscono nidi chiusi da un involucro,
 
 Studi condotti sui nidi della specie Polistes dominula hanno permesso di individuare un gruppo di proteine con la probabile funzione di impermeabilizzare il nido \cite{StanfordBrownSpelman2014_MaterialWaterproofing}.
 Partendo poi da questo studio si è andato a ricercare la sequenza aminoacidica relativa, dalla quale è stata predetta la struttura tridimensionale usando Alphafold \cite{AlphaFold}.
+Le strutture di queste proteine con la relativa sequenza sono riportate qui di seguito.
 
 \begin{figure}[H]
   \centering
@@ -83,6 +84,11 @@ Partendo poi da questo studio si è andato a ricercare la sequenza aminoacidica 
   \label{fig:prot1}
 \end{figure}
 
+\begin{texshade}{PROT03231FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
 
 \begin{figure}[H]
   \centering
@@ -91,12 +97,24 @@ Partendo poi da questo studio si è andato a ricercare la sequenza aminoacidica 
   \label{fig:prot2}
 \end{figure}
 
+\begin{texshade}{PROT08705FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{Figures/IMG10508.png}
   \caption{Struttura della proteina PdomMRNAr1.2-10508.1 predetta con Alphafold}
   \label{fig:prot 3}
 \end{figure}
+
+\begin{texshade}{PROT10508FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
 
 \begin{figure}[H]
   \centering
@@ -105,14 +123,12 @@ Partendo poi da questo studio si è andato a ricercare la sequenza aminoacidica 
   \label{fig:prot 4}
 \end{figure}
 
+\begin{texshade}{PROT04156FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
 
-Sono state riportate le strutture di quattro delle proteine:
-\begin{itemize}
-    \item PdomMRNAr1.2-03231.1
-    \item PdomMRNAr1.2-08705.1 
-    \item PdomMRNAr1.2-10508.1 
-    \item PdomMRNAr1.2-04156.1
-\end{itemize}
 
 Le strutture di queste proteine sono state predette con successo, ciò è dimostrato dalle sequenze di colore blu e azzuro nelle immagini precedenti. 
 L'unica incertezza, mostrata nella predizione con un colore arancione della catena, è associata ad una porzione della proteina PdomMRNAr1.2-04156.1.
