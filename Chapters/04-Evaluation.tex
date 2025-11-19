@@ -8,7 +8,71 @@ Per queste proteine è stato poi predetto il possibile segnale nello spettro NMR
 Gli spettri di \ce{^{13}C} ottenuti per i diversi campioni sono stati elaborati e processati, le zone relativa al segnale dei carboni in posizione uno e quattro delle unità di cellulosa sono stati interpretati ed è stata valutata la presenza di ciascuna componente cellulosica.
 
 \section{Struttura proteica}
-Tramite la struttura tridimensionale predetta usando Alphafold si è cercato di analizzare come la componente proteiche si assocciasse alla componente cellulosica dei nidi.
+Dopo aver individuato un gruppo di proteine probabilmente coinvolte nella realizzazione e nell’impermeabilizzazione del nido \cite{StanfordBrownSpelman2014_MaterialWaterproofing}, ne abbiamo ricavato le rispettive sequenze peptidiche.
+Queste sequenze sono state ottenute tramite analisi del genoma di Polistes dominula, da esse poi è stata predetta la struttura tridimensionale usando Alphafold \cite{AlphaFold}.
+Le strutture di queste proteine con la relativa sequenza sono riportate qui di seguito.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/IMG03231.png}
+  \caption{Struttura della proteina PdomMRNAr1.2-03231.1 predetta con Alphafold}
+  \label{fig:prot1}
+\end{figure}
+
+\begin{texshade}{PROT03231FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \residuesperline{45}
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/IMG08705.png}
+  \caption{Struttura della proteina PdomMRNAr1.2-08705.1 predetta con Alphafold}
+  \label{fig:prot2}
+\end{figure}
+
+\begin{texshade}{PROT08705FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Figures/IMG10508.png}
+  \caption{Struttura della proteina PdomMRNAr1.2-10508.1 predetta con Alphafold}
+  \label{fig:prot 3}
+\end{figure}
+
+\begin{texshade}{PROT10508FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{Figures/IMG04156.png}
+  \caption{Struttura della proteina PdomMRNAr1.2-04156.1 predetta con Alphafold}
+  \label{fig:prot 4}
+\end{figure}
+
+\begin{texshade}{PROT04156FASTA.fasta}
+  \shadingmode[hydropathy]{functional} % <-- attiva idrofobicità/idrofilia
+  \shadeallresidues                    % opzionale: colora tutti i residui
+  \showlegend                          % mostra legenda dei gruppi
+\end{texshade}
+
+
+Le strutture di queste proteine sono state predette con successo, ciò è dimostrato dalle sequenze di colore blu e azzuro nelle immagini precedenti. 
+L'unica incertezza, mostrata nella predizione con un colore arancione della catena, è associata ad una porzione della proteina PdomMRNAr1.2-04156.1.
+
+Altre due proteine erano stato individuate, tuttavia per una di queste non era stato possibile determinare la sequenza aminoacidica, mentre per l'altra non si è riusciti ad ottenere una predizione della struttura soddisfacente.
+
+
+Adesso tramite la struttura tridimensionale si è cercato di analizzare come la componente proteiche si assocciasse alla componente cellulosica dei nidi.
 Il modello sfruttato per considerare come le proteine e cellulosa interagissero si è semplificato considerando solo la possibilità di formazione di interazioni intermolecolari di tipo Van der Walls.
 Tramite le sequenze aminoacidiche delle proteine in esame si sono ottenuti dati relativi all'energia di solvatazione e all'accessibilità del solvente ai residui proteici, usati poi in uno script in python in modo da ricavare come una superficie, che simula il ruolo della cellulosa, si posizionasse rispetto alle componeneti proteiche \cite{CEROFOLINI2}.
 
