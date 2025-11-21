@@ -38,15 +38,14 @@ Questa configurazione permette di ottenere spettri ad alta risoluzione, utili pe
 
 Gli esperimenti di spettroscopia NMR allo stato solido sono stati registrati su due spettrometri Bruker Avance II, uno operante a una frequenza di Larmor di ¹H pari a 700 MHz (16,4 T), corrispondente a una frequenza di Larmor di ¹³C pari a 176 MHz, e l'altro a una frequenza di Larmor di ¹H pari a 700 MHz (18,8 T) corrispondente a una frequenza di Larmor di ¹³C pari a 201 MHz. 
 Gli spettrometri erano equipaggiati con una sonda MAS BVT da 3,2 mm (800 MHz) e da 4 mm (700 MHz) in modalità a doppia risonanza. 
-La frequenza di rotazione all’angolo magico (MAS) del campione è stata impostata a 11.111 kHz, frequenza che permette di non avere sovrapposizione delle spinning sideband con i segnali di interesse, evitando l'allargamento dato dalla risonanza rotazionale. \textcolor{red}{qui cita https://doi.org/10.1016/0009-2614(88)85051-6}
+La frequenza di rotazione all’angolo magico (MAS) del campione è stata impostata a 11.111 kHz, frequenza che permette di non avere sovrapposizione delle spinning sideband con i segnali di interesse, evitando l'allargamento dato dalla risonanza rotazionale. \cite{RALEIGH198871}
 
-Per gli esperimenti monodimensionali \ce{^{1}H} - \ce{^{13}C}, il tempo di contatto della cross-polarizzazione è stato variato da 200 µs a 2000 µs; gli spettri sono stati coprocessati utilizzando MCR. \textcolor{red}{qui cita il lavoro di Francesco del 2020, metti quale è il tempo di riciclo, che è impostato a 4 s come indicato da Larsson.}
-Per gli esperimenti bidimensionali \ce{^{1}H} - \ce{^{13}C} HETCOR, la cross-polarizzazione è stata ottenuta soddisfacendo la condizione di Hartmann–Hahn per k = 1. \textcolor{red}{qui cita https://doi.org/10.1006/jmra.1996.0024}
+Per gli esperimenti monodimensionali \ce{^{1}H} - \ce{^{13}C}, il tempo di contatto della cross-polarizzazione è stato variato da 200 µs a 2000 µs; gli spettri sono stati coprocessati utilizzando MCR \cite{Bruno2020MCR2DNMR}, il tempo di riciclo è stato impostato a 4 secondi\cite{LARSSON199719}. %come indicato da Larsson
+Per gli esperimenti bidimensionali \ce{^{1}H} - \ce{^{13}C} HETCOR, la cross-polarizzazione è stata ottenuta soddisfacendo la condizione di Hartmann–Hahn per k = 1 \cite{MARKS1996157}.
 Le finestre spettrali per ¹H e ¹³C erano pari rispettivamente a 20 e 250 ppm. 
-il tempo di contatto della cross-polarizzazione è stato variato da 200 µs a 2000 µs. Questo permette di valutare la distribuzione relative dei differenti nuclei. \textcolor{red}{qui puoi citare 10.1021/acs.molpharmaceut.0c00592, ma guarda se dentro c'è qualche riferimento di klaus schmidt-rohr che parla di legno}
-Durante l’evoluzione della magnetizzazione di \ce{^{1}H} sotto lo spostamento chimico nella dimensione indiretta, è stata utilizzata la sequenza di decoupling PMLG per sopprimere gli accoppiamenti dipolari \ce{^{1}H} – \ce{^{1}H}. \textcolor{red}{Qui cita i lavori di Vinogradov, Madhu e Vega che trovi nel lavoro del 2020 di Francesco}
-In questi esperimenti, il tempo di rilassamento tra una scansione e la successiva (interscan delay) è stato impostato a 1 s. \textcolor{red}{che è il valore che corrisponde a circa 1.3 volte il T1 del segnale che rilassa più velocemente, per migliorare il rapporto segnale rumore per unità di tempo, secondo il lavoro di Pons. Non mi ricordo l'anno, lo trovi nel mio articolo del 2012 con Griffin e Corzilius.}
-
+il tempo di contatto della cross-polarizzazione è stato variato da 200 µs a 2000 µs. Questo permette di valutare la distribuzione relative dei differenti nuclei \cite{Duan2020SpinDiffusion}. \textcolor{red}{qui puoi citare 10.1021/acs.molpharmaceut.0c00592, ma guarda se dentro c'è qualche riferimento di klaus schmidt-rohr che parla di legno}
+Durante l’evoluzione della magnetizzazione di \ce{^{1}H} sotto lo spostamento chimico nella dimensione indiretta, è stata utilizzata la sequenza di decoupling PMLG per sopprimere gli accoppiamenti dipolari \ce{^{1}H} – \ce{^{1}H} \cite{VINOGRADOV2002193}.
+In questi esperimenti, il tempo di rilassamento tra una scansione e la successiva (interscan delay) è stato impostato a 1 s, valore corrispondente a circa 1.3 volte il T1 del segnale che rilassa più velocemente, al fine di migliorare il rapporto segnale/rumore per unità di tempo \cite{PONS1988314}. %secondo il lavoro di pons
 
 In particolare sono stati analizzati con lo spettrometro a 700 MHz:
 \begin{itemize}
@@ -135,11 +134,14 @@ La zona in rosso fa riferimento al segnale del gruppo carbonilico delle proteine
 
 Quest'ultimo spettro è quello che ha destato un maggiore interesse nell'assegnazione dei segnali.
 La componente cellulosica è molto più scarsa se confronta agli altri spettri, le bande che si osservano nella zona in blu sono anche dovute al segnale della chitina, e si osserva nella zona in cui si ha segnale proteico due bande distinte che non sono riferibili a proteine.
-Questi due segnali sono stati successivamente assegnati a una componente lipidica (acidi grassi) e chitina. \textcolor{red}{di quali sono e su che base sono assegnati} 
+La banda con picco intorno a 40 ppm è stata assegnata ad una componente lipidica (acidi grasii)...;mentre la banda stretta e intensa a circa 22 ppm è stata assegnata alla chitina considerando la sua forma caratteristica e il suo comune utilizzo da parte di Vespula vulgaris.
 
 \subsection{Spettri bidimensionali}
 
-Sono riportati gli spettri bidimensionali di Polistes dominula, Polistes gallicus e Vespula vulgaris; in questi sono state evidenziate tre differenti zone: in rosso la zona relativa al segnale del gruppo carbonilico delle proteine, in blu la zona relativa al segnale della cellulosa e in giallo la zona relativa all'altro segnale proteico. \textcolor{red}{Qui prova a scrivere qualcosa su perché si usa uno spettro bidimensionale. Il senso deve essere che i segnali degli atomi di C sono meglio risolti. Durante la CP c'è spin diffusione, quindi a mixing diversi si vedono correlazioni a distanze diverse. poterlo correlare con lo shift di H, anche solo approssimativo perché PMLG non è perfetto, si completa l'informazione.}
+Sono riportati gli spettri bidimensionali di Polistes dominula, Polistes gallicus e Vespula vulgaris; in questi sono state evidenziate tre differenti zone: in rosso la zona relativa al segnale del gruppo carbonilico delle proteine, in blu la zona relativa al segnale della cellulosa e in giallo la zona relativa all'altro segnale proteico.
+La realizzazione di spettri bidimensionali consente di migliorare la risoluzione dei segnali del \ce{^{13}C}. 
+Durante la Cross Polarization si verifica spin diffusion, che permette di osservare correlazioni tra nuclei a distanze diverse a seconda del tempo di mixing. 
+L’aggiunta della dimensione protonica, anche se resa approssimativa dal PMLG, aiuta a discriminare ambienti chimici simili e completa l’informazione strutturale non accessibile da un semplice esperimento monodimensionale.
 
 \begin{figure}[H]
   \centering
@@ -204,6 +206,6 @@ Sono riportati gli spettri bidimensionali di Polistes dominula, Polistes gallicu
   \label{fig:VEs2D t2}
 \end{figure}
 
-Negli spettri di Polistes dominula e Polistes gallicus si può notare l'assenza del segnale del gruppo carbonilico.\textcolor{red}{questo è dovuto al fatto che il mixing è breve, e questo evidenzia che la proteina e la cellulosa non sono in contatto particolarmente "intimo". Potresti far vedere anche uno spettro a mixing lungo per vedere quali H correlano con il carbonile?}
-In quello di Vespula vulgaris invece si osserva la netta differenza dei segnali delle due traccie protoniche.\textcolor{red}{e questo riflette una differente composizione chimica. Anticipalo, anche se lo spieghi dopo!!}
+Negli spettri di Polistes dominula e Polistes gallicus si può notare l'assenza del segnale del gruppo carbonilico questo è dovuto al fatto che il mixing è breve, e questo evidenzia che la proteina e la cellulosa non sono in contatto particolarmente "intimo".\textcolor{red}{. Potresti far vedere anche uno spettro a mixing lungo per vedere quali H correlano con il carbonile?}
+In quello di Vespula vulgaris invece si osserva la netta differenza dei segnali delle due traccie protoniche e questo riflette una differente composizione chimica.
 

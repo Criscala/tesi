@@ -1,26 +1,26 @@
 {
   "latex-workshop.latex.recipes": [
     {
-      "name": "latexmk",
+      "name": "latexmk (TeX Live)",
       "tools": [
-        "latexmk"
+        "latexmk-texlive"
       ]
     }
   ],
   "latex-workshop.latex.tools": [
     {
-      "name": "latexmk",
-      "command": "latexmk",
+      "name": "latexmk-texlive",
+      "command": "C:/texlive/2025/bin/windows/latexmk.exe",
       "args": [
         "-synctex=1",
         "-interaction=nonstopmode",
         "-file-line-error",
         "-pdf",
-        "-auxdir=build", // tutti i file temporanei
-        "-output-directory=PDF", // PDF e tutto il resto
+        "-auxdir=build",
+        "-output-directory=PDF",
         "%DOC%"
       ]
     }
   ],
-  "latex-workshop.view.pdf.viewer":"tab"
+  "latex-workshop.view.pdf.viewer": "tab"
 }
