@@ -9,7 +9,17 @@ Gli spettri di \ce{^{13}C} ottenuti per i diversi campioni sono stati elaborati 
 
 \section{Struttura proteica}
 Un gruppo di proteine probabilmente coinvolte nella realizzazione e nell’impermeabilizzazione del nido è stato individuato attraverso uno studio \cite{StanfordBrownSpelman2014_MaterialWaterproofing}, partendo poi da questo abbiamo ricavato le sequenze peptidiche di queste proteine.
-Queste sequenze sono state ottenute tramite analisi del genoma di Polistes dominula, da esse poi è stata predetta la struttura tridimensionale usando Alphafold \cite{AlphaFold}.\textcolor{red}{potresti confrontare la distribuzione degli amminoacidi di queste proteine con la distribuzione media, tipo https://pmc.ncbi.nlm.nih.gov/articles/PMC2590925/?}
+Queste sequenze sono state ottenute tramite analisi del genoma di Polistes dominula, la distribuzione di amminoacidi in queste proteine poi è stata confrontata con la distribuzione media degli amminoacidi \cite{UniProtAminoAcidComposition}, ottenendo la figura sottostante dove sull'asse delle ordinate è riportata la presenza in percentuale di ogni residuo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{istogramma.png}
+    \caption{Abbondanze media degli amminoacidi messa a confronto con la abbondanza nelle quattro proteine di interesse}
+    \label{fig:mio_grafico}
+\end{figure}
+
+
+Successivamente sempre sfruttando le sequenze amminoacidiche sono state predette le strutture tridimensionali proteiche usando Alphafold \cite{AlphaFold}.
 Le strutture di queste proteine con la relativa sequenza sono riportate qui di seguito.
 
 \begin{figure}[H]
@@ -69,7 +79,7 @@ Le strutture di queste proteine con la relativa sequenza sono riportate qui di s
 AlphaFold valuta la qualità della predizione tramite il punteggio pLDDT, che rappresenta quanto accuratamente il modello ritiene di poter prevedere le distanze locali tra i residui della proteina. 
 Valori pLDDT alti indicano alta confidenza e vengono mostrati in blu, mentre valori bassi, mostrati in giallo/arancione, segnalano regioni strutturalmente poco affidabili.
 Nel complesso si sono ottenute predizioni molto buone con un'unica incertezza associata ad una porzione della proteina PdomMRNAr1.2-04156.1.
-Altre due proteine erano stato individuate, tuttavia per una di queste non era stato possibile determinare la sequenza aminoacidica, mentre per l'altra non si è riusciti ad ottenere una predizione della struttura soddisfacente.
+Altre due proteine erano stato individuate, tuttavia per una di queste non era stato possibile determinare la sequenza amminoacidica, mentre per l'altra non si è riusciti ad ottenere una predizione della struttura soddisfacente.
 
 In queste proteine sono state poi ricercate delle piccole sequenze di amminoacidi (INWKKIAE VGGKIL SSL e INWKKIAEIGKQVL SAL) che conferiscono proprietà antimicrobiche, importanti nella difesa del nido. \cite{Turillazzi2006Dominulin}
 Tuttavia in nessuna delle proteine individuate si è riscontrata la presenza di tali sequenze.
@@ -80,7 +90,7 @@ Dopo aver predetto la struttura tridimensionale si è cercato di analizzare come
 Tramite le strutture predette è stata calcolata l'accessibilità del solvente dei residui, usati poi per calcolare le energie di desolvatazione e l'energia di interazione di van der Waals (attraverso uno script in python sviluppato in \cite{CEROFOLINI2}) in modo da ricavare una o più superfici per rappresentare il posizionamento della cellulosa rispetto alla proteina \cite{CEROFOLINI2}.
 
 Due delle quattro proteine sono state analizzate considerando solo una parte della loro struttura: la stima della qualità della predizione del linker è bassa, quindi è probabile che l'orientazione relativa dell'elica N-terminale e il resto della proteina sia variabile.
-Quindi per le proteine PdomMRNAr1.2-03231.1 e PdomMRNAr1.2-08705.1 sono state rimosse parti di sequenza aminoacidica corrispondente alla alfa elica presente all'N-terminale.
+Quindi per le proteine PdomMRNAr1.2-03231.1 e PdomMRNAr1.2-08705.1 sono state rimosse parti di sequenza amminoacidica corrispondente alla alfa elica presente all'N-terminale.
 Per la proteina PdomMRNAr1.2-03231.1 è stata considerata la sequenza a partire dal residuo A57.
 
 \begin{figure}[H]
@@ -395,10 +405,10 @@ La tabella di seguito associa la legenda nelle figure alle varie forme di cellul
 \section{Analisi del segnale proteico}
 
 Negli spettri ottenuti è presente anche segnale NMR relativo alle componenti proteiche dei nidi.
-Questi segnali si ritrovano principalmente nella zona compresa tra 160 e 180 ppm, segnale relativo alla funzionalità carbonilica degli aminoacidi delle proteine, e tra i 20 e 60 ppm.
-L'assegnazione dei segnali delle proteine è stato effettuato sfruttando un programma che restituisce nello spettro una predizione di questo segnale partendo dalla sequenza aminoacidica. \cite{Haote}
+Questi segnali si ritrovano principalmente nella zona compresa tra 160 e 180 ppm, segnale relativo alla funzionalità carbonilica degli amminoacidi delle proteine, e tra i 20 e 60 ppm.
+L'assegnazione dei segnali delle proteine è stato effettuato sfruttando un programma che restituisce nello spettro una predizione di questo segnale partendo dalla sequenza amminoacidica. \cite{Haote}
 
-Le proteine di maggiore interesse per il quale è stata effettuta questa analisi sono quelle che hanno mostrato una migliore interazione con la cellulosa, ossia le due proteine PdomMRNAr1.2-03231.1 PdomMRNAr1.2-08705.1, ed è stata effettuata questa ricerca solo sullo spettro di Polistes dominula. \textcolor{red}{mi ricordi perché non avevamo guardato gallicus?}
+Le proteine di maggiore interesse per il quale è stata effettuta questa analisi sono quelle che hanno mostrato una migliore interazione con la cellulosa, ossia le due proteine PdomMRNAr1.2-03231.1 PdomMRNAr1.2-08705.1, ed è stata effettuata questa ricerca solo sullo spettro di Polistes dominula. 
 Nelle immagini sottostanti sono riportati i risultati ottenuti.
 
 \begin{figure}[H]

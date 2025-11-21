@@ -43,7 +43,7 @@ La frequenza di rotazione all’angolo magico (MAS) del campione è stata impost
 Per gli esperimenti monodimensionali \ce{^{1}H} - \ce{^{13}C}, il tempo di contatto della cross-polarizzazione è stato variato da 200 µs a 2000 µs; gli spettri sono stati coprocessati utilizzando MCR \cite{Bruno2020MCR2DNMR}, il tempo di riciclo è stato impostato a 4 secondi\cite{LARSSON199719}. %come indicato da Larsson
 Per gli esperimenti bidimensionali \ce{^{1}H} - \ce{^{13}C} HETCOR, la cross-polarizzazione è stata ottenuta soddisfacendo la condizione di Hartmann–Hahn per k = 1 \cite{MARKS1996157}.
 Le finestre spettrali per ¹H e ¹³C erano pari rispettivamente a 20 e 250 ppm. 
-il tempo di contatto della cross-polarizzazione è stato variato da 200 µs a 2000 µs. Questo permette di valutare la distribuzione relative dei differenti nuclei \cite{Duan2020SpinDiffusion}. \textcolor{red}{qui puoi citare 10.1021/acs.molpharmaceut.0c00592, ma guarda se dentro c'è qualche riferimento di klaus schmidt-rohr che parla di legno}
+il tempo di contatto della cross-polarizzazione è stato variato da 200 µs a 2000 µs. Questo permette di valutare la distribuzione relative dei differenti nuclei \cite{Duan2020SpinDiffusion}.
 Durante l’evoluzione della magnetizzazione di \ce{^{1}H} sotto lo spostamento chimico nella dimensione indiretta, è stata utilizzata la sequenza di decoupling PMLG per sopprimere gli accoppiamenti dipolari \ce{^{1}H} – \ce{^{1}H} \cite{VINOGRADOV2002193}.
 In questi esperimenti, il tempo di rilassamento tra una scansione e la successiva (interscan delay) è stato impostato a 1 s, valore corrispondente a circa 1.3 volte il T1 del segnale che rilassa più velocemente, al fine di migliorare il rapporto segnale/rumore per unità di tempo \cite{PONS1988314}. %secondo il lavoro di pons
 
@@ -134,7 +134,8 @@ La zona in rosso fa riferimento al segnale del gruppo carbonilico delle proteine
 
 Quest'ultimo spettro è quello che ha destato un maggiore interesse nell'assegnazione dei segnali.
 La componente cellulosica è molto più scarsa se confronta agli altri spettri, le bande che si osservano nella zona in blu sono anche dovute al segnale della chitina, e si osserva nella zona in cui si ha segnale proteico due bande distinte che non sono riferibili a proteine.
-La banda con picco intorno a 40 ppm è stata assegnata ad una componente lipidica (acidi grasii)...;mentre la banda stretta e intensa a circa 22 ppm è stata assegnata alla chitina considerando la sua forma caratteristica e il suo comune utilizzo da parte di Vespula vulgaris.
+La banda con picco intorno a 40 ppm è stata assegnata ad una componente lipidica (acidi grasii) andando a ricercare quali fossero i segnali appartenenti a quella zona \cite{Cravero2024HighRes13C}.
+Mentre la banda stretta e intensa a circa 22 ppm è stata assegnata al gruppo metile della chitina considerando la sua forma caratteristica \cite{Younes}.
 
 \subsection{Spettri bidimensionali}
 
@@ -185,6 +186,31 @@ L’aggiunta della dimensione protonica, anche se resa approssimativa dal PMLG, 
   \label{fig:Dom2D t2}
 \end{figure}
 
+Negli spettri di Polistes dominula e Polistes gallicus si può notare l'assenza del segnale del gruppo carbonilico questo è dovuto al fatto che il mixing è breve, e questo evidenzia che la proteina e la cellulosa non sono in contatto particolarmente "intimo".
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{galbidimxt.png}
+  \caption{Spettro bidimensionale Polistes gallicus con un tempo di contatto di 1000 µs} 
+  \label{fig:Dom2D t2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{traccia1gallicus.png}
+  \caption{prima traccia del segnale del protone Polistes gallicus} 
+  \label{fig:Dom2D t2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{Traccia2gallicus.png}
+  \caption{Seconda traccia del segnale del protone Polistes gallicus} 
+  \label{fig:Dom2D t2}
+\end{figure}
+
+Questi sopra riportati sono invece spettro e traccie di Polistes gallicus ottenuti però con un tempo di contatto maggiore rispetto al precedente, si osserva come il segnale del gruppo carbonile risulta essere più intenso.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\textwidth]{Vesp2D.png}
@@ -206,6 +232,5 @@ L’aggiunta della dimensione protonica, anche se resa approssimativa dal PMLG, 
   \label{fig:VEs2D t2}
 \end{figure}
 
-Negli spettri di Polistes dominula e Polistes gallicus si può notare l'assenza del segnale del gruppo carbonilico questo è dovuto al fatto che il mixing è breve, e questo evidenzia che la proteina e la cellulosa non sono in contatto particolarmente "intimo".\textcolor{red}{. Potresti far vedere anche uno spettro a mixing lungo per vedere quali H correlano con il carbonile?}
-In quello di Vespula vulgaris invece si osserva la netta differenza dei segnali delle due traccie protoniche e questo riflette una differente composizione chimica.
+In questi spettri di Vespula vulgaris invece si osserva la netta differenza dei segnali delle due traccie protoniche e questo riflette una differente composizione chimica.
 
